@@ -1,0 +1,20 @@
+@use './helpers' as *;
+
+:root {
+  --color-dark: #000000;
+  --color-dark-60: #00000099;
+  --color-dark-40: #00000066;
+  --color-dark-10: #0000001A;
+  --color-red: #FF6363;
+  --color-orage: #FF7426;
+  --color-blue: #E7FAFE;
+  --color-light: #FFFFFF;
+
+  --border-radius: 30px;
+  --border-radius-medium: 24px;
+  --border-radius-small: 16px;
+
+  --border: 1px solid var(--color-dark-10);
+
+  --transition-duration: 0.2s;
+}

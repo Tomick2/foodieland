@@ -1,0 +1,100 @@
+@use './functions' as *;
+
+$desctop-above: 1441;
+$desctop: 1440;
+
+$laptop-above: 1281;
+$laptop: 1280;
+
+$laptop-above-s: 1025;
+$laptop-s: 1024;
+
+$tablet-above: 781;
+$tablet: 780;
+
+$mobile-above: 481;
+$mobile: 480;
+
+
+
+@mixin desctop-above {
+  @media (width > rem($desctop-above)) {
+    @content;
+  }
+}
+
+@mixin desctop {
+  @media (width <= rem($desctop)) {
+    @content;
+  }
+}
+
+
+
+@mixin laptop-above {
+  @media (width > rem($laptop-above)) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (width <= rem($laptop)) {
+    @content;
+  }
+}
+
+
+
+@mixin laptop-above-s {
+  @media (width > rem($laptop-above-s)) {
+    @content;
+  }
+}
+
+@mixin laptop-s {
+  @media (width <= rem($laptop-s)) {
+    @content;
+  }
+}
+
+
+
+@mixin tablet-above {
+  @media (width > rem($tablet-above)) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (width <= rem($tablet)) {
+    @content;
+  }
+}
+
+
+
+@mixin mobile-above {
+  @media (width > rem($mobile-above)) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (width <= rem($mobile)) {
+    @content;
+  }
+}
+
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+  @include mobile {
+    &:active {
+      @content;
+    }
+  }
+}

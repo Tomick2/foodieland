@@ -1,0 +1,15 @@
+@use '../helpers' as *;
+
+.button {
+  font-weight: 600; 
+  font-size: rem(14);
+  padding: rem(18) rem(36);
+  background-color: var(--color-dark);
+  border-radius: var(--border-radius-small);
+  border: none;
+  color: var(--color-light);
+  
+  @include hover {
+    background-color: var(--color-red);
+  }
+}
