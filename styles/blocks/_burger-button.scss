@@ -6,16 +6,19 @@
   
   width: rem(22);
   aspect-ratio: 1;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-around;
   padding: 5px;
   border-radius: rem(4);
   background-color: var(--color-dark);
 
-
   @include hover {
     background-color: var(--color-red);
+  }
+
+  @include laptop-s {
+    display: flex;
   }
 
   &__line {

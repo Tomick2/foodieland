@@ -1,0 +1,128 @@
+@use '../helpers' as *;
+
+.hot-recipes {
+  padding-block: rem(40);
+
+  &__list {
+    display: flex;
+    overflow-y: auto;
+    column-gap: rem(40);
+
+    @include tablet {
+      height: 580px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    min-width: fluid(390, 1280);
+    background-color: var(--color-blue);
+    border-radius: var(--border-radius-large);
+
+    @include tablet {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__body {
+    width: 60%;
+    padding: fluid(20, 50);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: start;
+    align-items: center;
+    gap: rem(30) rem(5);
+
+    @include tablet {
+      width: 100%;
+      height: 80%;
+      gap: 0;
+    }
+  }
+
+  &__stiker,
+  &__title,
+  &__description,
+  &__recipe-met {
+    grid-column: -1 / 1;
+  }
+
+  &__sticker {
+    display: flex;
+    align-items: center;
+    padding: rem(10) rem(20);
+    column-gap: rem(13);
+    background-color: var(--color-light);
+    border-radius: var(--border-radius-large);
+
+    & p {
+      font-weight: 600;
+      color: var(--color-dark);
+    }
+  }
+
+  &__button {
+    padding: rem(18) rem(25);
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    column-gap: rem(15);
+    text-decoration: none;
+    text-wrap: nowrap;
+  }
+
+  &__bg {
+    width: 40%;
+    height: 100%;
+    background: url('../../images/hot-recipes/bg.jpg') center/cover no-repeat;
+    border-radius: 0 var(--border-radius-large) var(--border-radius-large) 0;
+
+    @include tablet {
+      width: 100%;
+      height: 20%;
+      border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+    }
+  }
+}
+
+.recipe-met {
+  display: flex;
+  align-items: center;
+  column-gap: rem(16);
+
+  &__time,
+  &__type {
+    display: flex;
+    padding: rem(8) rem(16);
+    flex-direction: row;
+    column-gap: rem(10);
+    border-radius: var(--border-radius-large);
+    background-color: var(--color-dark-5);
+  }
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  column-gap: rem(16);
+
+  &__avatar {
+    border-radius: 50%;
+  }
+
+  &__info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__full-name {
+    font-weight: 700;
+    color: var(--color-dark);
+  }
+
+  &__postDate {
+    color: var(--color-dark-60);
+  }
+}
