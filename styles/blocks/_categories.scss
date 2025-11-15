@@ -1,0 +1,185 @@
+@use '../helpers' as *;
+
+.categories {
+  display: flex;
+  padding: fluid(60, 120) 10px fluid(60, 120);
+  flex-direction: column;
+  row-gap: fluid(40, 80);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  &__link {
+    padding: rem(20) rem(27);
+    border-radius: var(--border-radius-small);
+    background-color: var(--color-blue);
+    color: var(--color-dark);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: fluid(20, 40);
+
+    @include laptop-s {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+.category {
+  padding: fluid(10, 40);
+  display: flex;
+  align-items: center;
+  row-gap: rem(50);
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+
+  &.breakfast {
+    background: linear-gradient(0deg,rgba(112, 130, 70, 10%) 0%, rgba(0, 0, 0, 0%) 65%);
+
+    & > .category__icon-wrapper {
+      position: relative;
+
+      &::before {
+        z-index: -100;
+        position: absolute;
+        content: "";
+        width: 100px;
+        height: 100px;
+        top: 20px;
+        left: 20px;
+        background: none;
+        background: url("../../images/categories/png-1.png") center/contain no-repeat;
+        filter: blur(10px);
+        opacity: 0.3;
+      }
+    }
+  }
+
+  &.vegan {
+    background: linear-gradient(0deg,rgba(108, 198, 63, 10%) 0%, rgba(0, 0, 0, 0%) 65%);
+
+    & > .category__icon-wrapper {
+      position: relative;
+      
+      &::before {
+        z-index: -100;
+        position: absolute;
+        content: "";
+        width: 100px;
+        height: 100px;
+        top: 20px;
+        left: 20px;
+        background: none;
+        background: url("../../images/categories/png-2.png") center/contain no-repeat;
+        filter: blur(10px);
+        opacity: 0.3;
+      }
+    }
+  }
+
+  &.meat {
+    background: linear-gradient(0deg,rgba(204, 38, 27, 10%) 0%, rgba(0, 0, 0, 0%) 65%);
+
+    & > .category__icon-wrapper {
+      position: relative;
+      
+      &::before {
+        z-index: -100;
+        position: absolute;
+        content: "";
+        width: 100px;
+        height: 100px;
+        top: 20px;
+        left: 20px;
+        background: none;
+        background: url("../../images/categories/png-3.png") center/contain no-repeat;
+        filter: blur(10px);
+        opacity: 0.3;
+      }
+    }
+  }
+
+  &.dessert {
+    background: linear-gradient(0deg,rgba(240, 158, 0, 10%) 0%, rgba(0, 0, 0, 0%) 65%);
+
+    & > .category__icon-wrapper {
+      position: relative;
+      
+      &::before {
+        z-index: -100;
+        position: absolute;
+        content: "";
+        width: 100px;
+        height: 100px;
+        top: 20px;
+        left: 20px;
+        background: none;
+        background: url("../../images/categories/png-4.png") center/contain no-repeat;
+        filter: blur(10px);
+        opacity: 0.3;
+      }
+    }
+  }
+
+  &.lunch {
+    background: linear-gradient(0deg,rgba(0, 0, 0, 10%) 0%, rgba(0, 0, 0, 0%) 65%);
+
+    & > .category__icon-wrapper {
+      position: relative;
+      
+      &::before {
+        z-index: -100;
+        position: absolute;
+        content: "";
+        width: 100px;
+        height: 100px;
+        top: 20px;
+        left: 20px;
+        background: none;
+        background: url("../../images/categories/png-5.png") center/contain no-repeat;
+        filter: blur(10px);
+        opacity: 0.3;
+      }
+    }
+  }
+
+  &.chocolate {
+    background: linear-gradient(0deg,rgba(0, 0, 0, 10%) 0%, rgba(0, 0, 0, 0%) 65%);
+
+    & > .category__icon-wrapper {
+      position: relative;
+      
+      &::before {
+        z-index: -100;
+        position: absolute;
+        content: "";
+        width: 100px;
+        height: 100px;
+        top: 20px;
+        left: 20px;
+        background: none;
+        background: url("../../images/categories/png-6.png") center/contain no-repeat;
+        filter: blur(10px);
+        opacity: 0.3;
+      }
+    }
+  }
+
+  &__title {
+    color: var(--color-dark);
+    font-weight: 600;
+  }
+}

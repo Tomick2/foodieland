@@ -1,7 +1,7 @@
 @use '../helpers' as *;
 
 .hot-recipes {
-  padding-block: rem(40);
+  padding-block: fluid(20, 40);
 
   &__list {
     display: flex;
@@ -105,6 +105,7 @@
   display: flex;
   align-items: center;
   column-gap: rem(16);
+  text-decoration: none;
 
   &__avatar {
     border-radius: 50%;

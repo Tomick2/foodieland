@@ -23,7 +23,7 @@ h1, .h1 { @include fluid-text(30, 64); }
 
 h2, .h2 { @include fluid-text(24, 48); }
 
-a {
+a.link {
   color: var(--color-red);
   font-weight: 500;
 
