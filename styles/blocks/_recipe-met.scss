@@ -1,0 +1,14 @@
+@use '../helpers' as *;
+
+.recipe-met {
+  display: flex;
+  align-items: center;
+  column-gap: rem(16);
+
+  &__time,
+  &__type {
+    display: flex;
+    flex-direction: row;
+    column-gap: rem(10);
+  }
+}

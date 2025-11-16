@@ -3,6 +3,7 @@
 .container {
   max-width: calc(rem(1280) + rem(16) * 2);
   margin-inline: auto;
+  padding-inline: 10px;
 }
 
 .visually-hidden {
