@@ -220,6 +220,8 @@ svg * {
   --color-orage: #FF7426;
   --color-blue: #E7FAFE;
   --color-light: #FFFFFF;
+  --color-green: #357355;
+  --color-green-dark: #1D483B;
   --border-radius-large: 44px;
   --border-radius: 30px;
   --border-radius-medium: 24px;
@@ -258,6 +260,10 @@ svg * {
   .visually-mobile {
     display: none !important;
   }
+}
+
+html.is-lock {
+  overflow: hidden;
 }
 
 body {
@@ -361,10 +367,13 @@ p {
 
 .header {
   padding: clamp(1.25rem, 0.7857142857rem + 1.9047619048vw, 2.5rem) clamp(2.5rem, 1.5714285714rem + 3.8095238095vw, 5rem);
+  margin-bottom: clamp(1.25rem, 0.7857142857rem + 1.9047619048vw, 2.5rem);
   border-bottom: 1px solid var(--color-dark-10);
 }
 .header.burger-button-is-active {
+  margin-bottom: 0;
   position: absolute;
+  z-index: 1000;
   inset: 0;
   align-items: start;
   background-color: var(--color-light);
@@ -434,7 +443,7 @@ p {
 }
 
 .hot-recipes {
-  padding-block: clamp(1.25rem, 0.7857142857rem + 1.9047619048vw, 2.5rem);
+  margin-bottom: clamp(5rem, 3.1428571429rem + 7.619047619vw, 10rem);
 }
 .hot-recipes__list {
   display: flex;
@@ -552,7 +561,7 @@ p {
 
 .categories {
   display: flex;
-  padding-block: clamp(3.75rem, 2.3571428571rem + 5.7142857143vw, 7.5rem);
+  margin-bottom: clamp(5.625rem, 3.4660714286rem + 8.8571428571vw, 11.4375rem);
   flex-direction: column;
   row-gap: clamp(2.5rem, 1.5714285714rem + 3.8095238095vw, 5rem);
 }
@@ -738,7 +747,7 @@ p {
 .simple-recipes {
   display: flex;
   flex-direction: column;
-  padding-block: clamp(1.875rem, 1.1089285714rem + 3.1428571429vw, 3.9375rem);
+  margin-bottom: clamp(4.375rem, 2.6803571429rem + 6.9523809524vw, 8.9375rem);
   row-gap: clamp(3.125rem, 2.0571428571rem + 4.380952381vw, 6rem);
 }
 .simple-recipes__header {
@@ -753,7 +762,7 @@ p {
 .simple-recipes__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
+  gap: clamp(1.25rem, 0.7857142857rem + 1.9047619048vw, 2.5rem);
 }
 @media (width <= 64rem) {
   .simple-recipes__list {
@@ -769,7 +778,7 @@ p {
 .reminder {
   position: relative;
   height: 434px;
-  background: linear-gradient(#357355 0%, #1D483B 100%);
+  background: linear-gradient(var(--color-green) 0%, var(--color-green-dark) 100%);
 }
 .reminder::after {
   position: absolute;
@@ -802,6 +811,12 @@ p {
   position: relative;
   border-radius: var(--border-radius);
   background-color: var(--color-blue);
+}
+@media (width <= 48.75rem) {
+  .card-recipe {
+    max-width: 600px;
+    margin-inline: auto;
+  }
 }
 @media (hover: hover) {
   .card-recipe:hover .card-recipe__link * {
@@ -853,7 +868,7 @@ p {
 }
 
 .kitchen-tutorial {
-  padding-block: clamp(2.5rem, 1.5714285714rem + 3.8095238095vw, 5rem);
+  margin-bottom: clamp(5rem, 3.1428571429rem + 7.619047619vw, 10rem);
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 2.5rem;
@@ -886,6 +901,57 @@ p {
   .kitchen-tutorial__bg {
     width: 380px;
   }
+}
+
+.instagram {
+  display: flex;
+  flex-direction: column;
+  row-gap: clamp(2.5rem, 1.5714285714rem + 3.8095238095vw, 5rem);
+  align-items: center;
+  padding-block: clamp(2.5rem, 1.5714285714rem + 3.8095238095vw, 5rem);
+  background: linear-gradient(transparent 0%, var(--color-blue) 100%);
+  margin-bottom: clamp(5rem, 3.1428571429rem + 7.619047619vw, 10rem);
+}
+.instagram__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1.5rem;
+}
+.instagram__title, .instagram__description {
+  text-align: center;
+}
+.instagram__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+@media (width <= 80rem) {
+  .instagram__list {
+    gap: 0.625rem;
+  }
+}
+@media (width <= 64rem) {
+  .instagram__list {
+    gap: 2.5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (width <= 48.75rem) {
+  .instagram__list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (width <= 48.75rem) {
+  .instagram__item {
+    width: 330px;
+    margin-inline: auto;
+  }
+}
+.instagram__link {
+  text-decoration: none;
+  display: flex;
+  column-gap: 1.0625rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

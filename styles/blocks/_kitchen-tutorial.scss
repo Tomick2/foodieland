@@ -1,7 +1,7 @@
 @use '../helpers' as *;
 
 .kitchen-tutorial {
-  padding-block: fluid(40, 80);
+  margin-bottom: fluid(80, 160);
   display: grid;
   grid-template-columns: 1fr auto;
   gap: rem(40);

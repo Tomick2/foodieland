@@ -5,7 +5,8 @@ class Header {
   }
 
   classState = {
-    isActive: "burger-button-is-active"
+    isActive: "burger-button-is-active",
+    isLock: "is-lock"
   }
 
   constructor() {
@@ -17,6 +18,7 @@ class Header {
   bindEvents() {
     this.burgerButton.addEventListener("click", () => {
       this.headerElement.classList.toggle(this.classState.isActive)
+      document.documentElement.classList.toggle(this.classState.isLock)
     })
   }
 }

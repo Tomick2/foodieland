@@ -3,7 +3,7 @@
 .simple-recipes {
   display: flex;
   flex-direction: column;
-  padding-block: fluid(30, 63);
+  margin-bottom: fluid(70, 143);
   row-gap: fluid(50, 96);
 
   &__header {
@@ -21,7 +21,7 @@
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: rem(40);
+    gap: fluid(20, 40);
 
     @include laptop-s {
       grid-template-columns: repeat(2, 1fr);
@@ -36,7 +36,7 @@
 .reminder {
   position: relative;
   height: 434px;
-  background: linear-gradient(#357355 0%, #1D483B 100%);
+  background: linear-gradient(var(--color-green) 0%, var(--color-green-dark) 100%);
 
   &::after {
     position: absolute;

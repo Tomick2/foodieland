@@ -2,37 +2,40 @@
 
 .header {
   padding: fluid(20, 40) fluid(40, 80);
+  margin-bottom: fluid(20, 40);
   border-bottom: 1px solid var(--color-dark-10);
   
   &.burger-button-is-active {
-      position: absolute;
-      inset: 0;
-      align-items: start;
-      background-color: var(--color-light);
+    margin-bottom: 0;
+    position: absolute;
+    z-index: 1000;
+    inset: 0;
+    align-items: start;
+    background-color: var(--color-light);
 
-      .header {
-        &__menu {
-          width: calc(100% - (42px * 2));
-          display: flex;
-          justify-content: center;
-          position: absolute;
-          top: 50%;
-          translate: 0 -50%;
-          max-height: 500px;
-          overflow-y: auto;
-        }
-
-        &__list {
-          flex-direction: column;
-          align-items: center;
-          row-gap: rem(30);
-        }
+    .header {
+      &__menu {
+        width: calc(100% - (42px * 2));
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        translate: 0 -50%;
+        max-height: 500px;
+        overflow-y: auto;
       }
 
-      .burger-button {
-        display: flex;
+      &__list {
+        flex-direction: column;
+        align-items: center;
+        row-gap: rem(30);
       }
     }
+
+    .burger-button {
+      display: flex;
+    }
+  }
 
   &__inner {
     display: flex;
