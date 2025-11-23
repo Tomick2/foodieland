@@ -2,8 +2,6 @@
 
 .card-recipe {
   position: relative;
-  border-radius: var(--border-radius);
-  background-color: var(--color-blue);
 
   @include tablet {
     max-width: 600px;
@@ -21,12 +19,11 @@
     text-decoration: none;
     display: flex;
     flex-direction: column;
-    padding: rem(16) rem(16) rem(32);
     row-gap: rem(24);
   }
 
   &__image {
-    width: 100%;
+    width: auto;
     border-radius: var(--border-radius-medium-s);
   }
 
@@ -41,8 +38,8 @@
     width: rem(48);
     aspect-ratio: 1;
     position: absolute;
-    top: 30px;
-    right: 30px;
+    top: 20px;
+    right: 20px;
     display: flex;
     justify-content: center;
     align-items: center;

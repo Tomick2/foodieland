@@ -1,0 +1,41 @@
+@use '../helpers' as *;
+
+.delicious-recipe {
+  display: flex;
+  flex-direction: column;
+  row-gap: fluid(40, 80);
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-inline: auto;
+    column-gap: fluid(77, 153);
+    row-gap: fluid(20, 40);
+
+    @include tablet {
+      flex-direction: column;
+
+      & * {
+        text-align: center;
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: fluid(20, 40);
+
+    @include laptop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include laptop-s {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include tablet {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

@@ -444,6 +444,8 @@ p {
 
 .hot-recipes {
   margin-bottom: clamp(5rem, 3.1428571429rem + 7.619047619vw, 10rem);
+  margin-inline: auto;
+  max-width: 1980px;
 }
 .hot-recipes__list {
   display: flex;
@@ -774,6 +776,11 @@ p {
     grid-template-columns: repeat(1, 1fr);
   }
 }
+.simple-recipes__item {
+  padding: 1rem 1rem 2rem;
+  border-radius: var(--border-radius);
+  background-color: var(--color-blue);
+}
 
 .reminder {
   position: relative;
@@ -809,8 +816,6 @@ p {
 
 .card-recipe {
   position: relative;
-  border-radius: var(--border-radius);
-  background-color: var(--color-blue);
 }
 @media (width <= 48.75rem) {
   .card-recipe {
@@ -833,11 +838,10 @@ p {
   text-decoration: none;
   display: flex;
   flex-direction: column;
-  padding: 1rem 1rem 2rem;
   row-gap: 1.5rem;
 }
 .card-recipe__image {
-  width: 100%;
+  width: auto;
   border-radius: var(--border-radius-medium-s);
 }
 .card-recipe__body {
@@ -850,8 +854,8 @@ p {
   width: 3rem;
   aspect-ratio: 1;
   position: absolute;
-  top: 30px;
-  right: 30px;
+  top: 20px;
+  right: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -952,6 +956,47 @@ p {
   text-decoration: none;
   display: flex;
   column-gap: 1.0625rem;
+}
+
+.delicious-recipe {
+  display: flex;
+  flex-direction: column;
+  row-gap: clamp(2.5rem, 1.5714285714rem + 3.8095238095vw, 5rem);
+}
+.delicious-recipe__header {
+  display: flex;
+  align-items: center;
+  margin-inline: auto;
+  column-gap: clamp(4.8125rem, 3.0482142857rem + 7.2380952381vw, 9.5625rem);
+  row-gap: clamp(1.25rem, 0.7857142857rem + 1.9047619048vw, 2.5rem);
+}
+@media (width <= 48.75rem) {
+  .delicious-recipe__header {
+    flex-direction: column;
+  }
+  .delicious-recipe__header * {
+    text-align: center;
+  }
+}
+.delicious-recipe__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1.25rem, 0.7857142857rem + 1.9047619048vw, 2.5rem);
+}
+@media (width <= 80rem) {
+  .delicious-recipe__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (width <= 64rem) {
+  .delicious-recipe__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (width <= 48.75rem) {
+  .delicious-recipe__list {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

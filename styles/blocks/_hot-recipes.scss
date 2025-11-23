@@ -2,6 +2,8 @@
 
 .hot-recipes {
   margin-bottom: fluid(80, 160);
+  margin-inline: auto;
+  max-width: 1980px;
 
   &__list {
     display: flex;
