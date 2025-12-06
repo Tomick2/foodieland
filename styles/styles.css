@@ -1166,6 +1166,20 @@ span {
   }
 }
 
+.main-recipe {
+  display: grid;
+  column-gap: clamp(1.25rem, 0.7857142857rem + 1.9047619048vw, 2.5rem);
+  grid-template-columns: 66% auto;
+}
+@media (width <= 64rem) {
+  .main-recipe {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.main-recipe > * {
+  grid-column: -1/1;
+}
+
 .recipe {
   display: flex;
   flex-direction: column;
@@ -1341,6 +1355,97 @@ span {
 }
 .nutrition-info__description {
   margin-top: auto;
+}
+
+.ingredients {
+  display: flex;
+  flex-direction: column;
+  row-gap: clamp(1.5rem, 0.9428571429rem + 2.2857142857vw, 3rem);
+  margin-bottom: clamp(2.75rem, 1.7285714286rem + 4.1904761905vw, 5.5rem);
+}
+@media (width > 48.8125rem) {
+  .ingredients {
+    grid-column: 1/2;
+  }
+}
+.ingredients__item {
+  padding-block: clamp(1rem, 0.6285714286rem + 1.5238095238vw, 2rem);
+  display: flex;
+  align-items: center;
+  column-gap: clamp(0.75rem, 0.4714285714rem + 1.1428571429vw, 1.5rem);
+  border-bottom: var(--border);
+}
+.ingredients__checkbox:checked ~ .ingredients__label {
+  color: var(--color-dark-60);
+  text-decoration: line-through;
+}
+
+.directions {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: clamp(5rem, 3.1428571429rem + 7.619047619vw, 10rem);
+}
+@media (width > 48.8125rem) {
+  .directions {
+    grid-column: 1/2;
+  }
+}
+.directions__item {
+  display: flex;
+  column-gap: clamp(0.75rem, 0.4714285714rem + 1.1428571429vw, 1.5rem);
+  padding-block: clamp(1.5rem, 0.9428571429rem + 2.2857142857vw, 3rem);
+  border-bottom: var(--border);
+}
+.directions__step {
+  display: flex;
+  flex-direction: column;
+  row-gap: clamp(0.75rem, 0.4714285714rem + 1.1428571429vw, 1.5rem);
+}
+.directions__image {
+  border-radius: var(--border-radius-medium-s);
+}
+.directions__checkbox:checked ~ .directions__step > * {
+  color: var(--color-dark-60);
+  text-decoration: line-through;
+}
+
+.other-recipes {
+  position: relative;
+}
+.other-recipes > div {
+  top: 10px;
+  position: sticky;
+}
+@media (width > 48.8125rem) {
+  .other-recipes {
+    grid-column: 2/3;
+    grid-row: 2/4;
+  }
+}
+
+.checkbox {
+  position: relative;
+  margin: 0;
+  width: 0rem;
+  height: 0rem;
+  margin-right: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.checkbox::after {
+  position: absolute;
+  content: "✔";
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  background-color: var(--color-light);
+  color: transparent;
+  border-radius: 50%;
+  border: 1px solid var(--color-gray);
+}
+.checkbox:checked:after {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  border: none;
 }
 
 /*# sourceMappingURL=styles.css.map */

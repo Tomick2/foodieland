@@ -1,0 +1,33 @@
+@use '../helpers' as *;
+
+.directions {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: fluid(80, 160);
+
+  @include tablet-above {
+    grid-column: 1 / 2;
+  }
+
+  &__item {
+    display: flex;
+    column-gap: fluid(12, 24);
+    padding-block: fluid(24, 48);
+    border-bottom: var(--border);
+  }
+
+  &__step {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(12, 24);
+  }
+
+  &__image {
+    border-radius: var(--border-radius-medium-s);
+  }
+
+  &__checkbox:checked ~ &__step > * {
+    color: var(--color-dark-60);
+    text-decoration: line-through;
+  }
+}

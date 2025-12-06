@@ -1,0 +1,15 @@
+@use '../helpers' as *;
+
+.other-recipes {
+  position: relative;
+
+  & > div {
+    top: 10px;
+    position: sticky;
+  }
+
+  @include tablet-above {
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+  }
+}
