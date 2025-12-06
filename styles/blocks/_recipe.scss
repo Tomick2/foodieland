@@ -1,0 +1,168 @@
+@use '../helpers' as *;
+
+.recipe {
+  display: flex;
+  flex-direction: column;
+  gap: fluid(26, 64);
+  margin-bottom: rem(52);
+
+  &__header {
+    display: grid;
+    grid-template-areas: 
+      'title title actions'
+      'author met actions';
+    gap: fluid(16, 32);
+
+    @include laptop-s {
+      grid-template-areas: 
+        'title title actions'
+        'author met met';
+      align-items: center;
+    }
+
+    @include tablet {
+      grid-template-areas: 
+        'title title'
+        'met met'
+        'author actions';
+    }
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+
+  &__title {
+    grid-area: title;
+
+    @include mobile {
+      text-align: center;
+    }
+  }
+
+  &__author {
+    grid-area: author;
+  }
+
+  &-met {
+    grid-area: met;
+
+    @include laptop-s {
+      justify-content: end;
+    }
+
+    @include tablet {
+      justify-content: space-around;
+    }
+    
+    @include mobile {
+      width: 100%;
+      flex-wrap: wrap;
+    }
+  }
+
+  &-met__item {
+    height: 100%;
+    padding-inline: fluid(16, 32);
+
+    @include laptop-s {
+      padding: fluid(16, 32);
+    }
+
+    @include tablet-above {
+      border-left: var(--border);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: fluid(16, 32);
+
+    grid-area: actions;
+
+    @include mobile {
+      width: 100%;
+      justify-content: space-evenly;
+    }
+  }
+
+  &__button {
+    display: flex;
+    width: rem(80);
+    flex-direction: column;
+    align-items: center;
+    gap: fluid(8, 16);
+
+    padding: 0;
+    background-color: transparent;
+    border: none;
+
+    &-img {
+      width: rem(80);
+      padding: rem(28);
+      aspect-ratio: 1;
+      background-color: var(--color-blue);
+      border-radius: 50%;
+    }
+  }
+
+  &__alert {
+    position: absolute;
+    left: 50%;
+    top: 11%;
+    translate: -50% 0;
+    background-color: var(--color-red);
+    padding: rem(8) rem(50);
+    color: var(--color-light);
+    border-radius: var(--border-radius-large);
+  }
+
+  &__body {
+    display: grid;
+    gap: fluid(30, 40);
+    grid-template-columns: 66% auto;
+
+    @include laptop-s {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__video-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    @include laptop-s {
+      grid-column: -1 / 1;
+    }
+  }
+
+  &__video-guide {
+    border-radius: var(--border-radius);
+  }
+
+  &__nutrition-info {
+    display: flex;
+    flex-direction: column;
+    padding: fluid(16, 32);
+    gap: rem(24);
+    background-color: var(--color-blue);
+    border-radius: var(--border-radius);
+  }
+
+  &__description {
+    @include laptop-above-s {
+      grid-column: -1 / 1;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@use '../helpers' as *;
+
+.nutrition-info {
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    padding-block: rem(16);
+    border-bottom: var(--border);
+  }
+
+  &__label,
+  &__value {
+    font-size: rem(18);
+    font-weight: 500;
+  }
+
+  &__label {
+    color: var(--color-dark-60);
+  }
+
+  &__value {
+    color: var(--color-dark);
+  }
+  
+  &__description {
+    margin-top: auto;
+  }
+}

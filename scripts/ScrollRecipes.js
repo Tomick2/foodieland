@@ -1,6 +1,10 @@
 class ScrollRecipes {
+  dataJsList = {
+    slider: "[data-js-scroll-recipes]"
+  }
+
   constructor () {
-    this.scroll = document.querySelector("[data-js-scroll-recipes]")
+    this.scroll = document.querySelector(this.dataJsList.slider)
     this.bindEvent()
   }
 
@@ -10,8 +14,6 @@ class ScrollRecipes {
       this.scroll.scrollLeft += event.deltaY
     })
   }
-
-  
 }
 
 export default ScrollRecipes

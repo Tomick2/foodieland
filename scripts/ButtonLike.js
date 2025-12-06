@@ -1,5 +1,5 @@
 class ButtonLike {
-  elements = {
+  dataJsList = {
     buttonLike: "[data-js-button-like]",
   }
 
@@ -9,7 +9,7 @@ class ButtonLike {
   }
 
   constructor() {
-    this.buttonElements = document.querySelectorAll(this.elements.buttonLike)
+    this.buttonElements = document.querySelectorAll(this.dataJsList.buttonLike)
     this.bindEvent()
   }
 

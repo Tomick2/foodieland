@@ -29,6 +29,10 @@ h1, .h1 { @include fluid-text(30, 64); }
 
 h2, .h2 { @include fluid-text(24, 48); }
 
+h3, .h3 { @include fluid-text(18, 36); }
+
+h4, .h4 { @include fluid-text(16, 24); }
+
 a.link {
   color: var(--color-red);
   font-weight: 500;
@@ -40,4 +44,18 @@ a.link {
 
 p {
   color: var(--color-dark-60);
+}
+
+span {
+  color: var(--color-dark);
+  font-weight: 600;
+  font-size: fluid(14, 18);
+}
+
+@media print {
+  .header,
+  .footer,
+  main > *:not(.ingredients, .directions) {
+    display: none;
+  }
 }

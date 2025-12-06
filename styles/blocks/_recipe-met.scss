@@ -5,10 +5,22 @@
   align-items: center;
   column-gap: rem(16);
 
-  &__time,
-  &__type {
+  &__item {
     display: flex;
+    align-items: center;
     flex-direction: row;
     column-gap: rem(10);
+  }
+
+  &__title {
+    font-size: rem(12);
+    font-weight: 500;
+    color: var(--color-dark);
+  }
+
+  &__description {
+    font-size: rem(14);
+    font-weight: 500;
+    color: var(--color-dark-60);
   }
 }
