@@ -1,0 +1,28 @@
+@use '../helpers' as *;
+
+.author {
+  display: flex;
+  align-items: center;
+  column-gap: rem(16);
+  text-decoration: none;
+
+  &__avatar {
+    border-radius: 50%;
+  }
+
+  &__info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__full-name {
+    font-weight: 700;
+    color: var(--color-dark);
+  }
+
+  &__postDate {
+    color: var(--color-dark-60);
+  }
+}

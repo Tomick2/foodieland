@@ -51,7 +51,7 @@
   &__title {
     grid-area: title;
 
-    @include mobile {
+    @include tablet {
       text-align: center;
     }
   }
@@ -60,34 +60,39 @@
     grid-area: author;
   }
 
-  &-met {
+  &__recipe-met {
     grid-area: met;
-
-    @include laptop-s {
-      justify-content: end;
-    }
+    display: flex;
+    justify-content: end;
 
     @include tablet {
-      justify-content: space-around;
+      width: 100%;
+      justify-content: space-evenly;
+    }
+
+    @include mobile {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: rem(20);
+      flex-wrap: wrap;
+      justify-items: center;
+    }
+
+    & > * {
+      padding-inline: fluid(16, 32);
+      height: 100%;
+
+      @include tablet-above {
+        border-left: var(--border);
+      }
+
+      &:last-child {
+        @include mobile {
+          grid-column: -1 / 1;
+        }
+      }
     }
     
-    @include mobile {
-      width: 100%;
-      flex-wrap: wrap;
-    }
-  }
-
-  &-met__item {
-    height: 100%;
-    padding-inline: fluid(16, 32);
-
-    @include laptop-s {
-      padding: fluid(16, 32);
-    }
-
-    @include tablet-above {
-      border-left: var(--border);
-    }
   }
 
   &__actions {

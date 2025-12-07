@@ -34,7 +34,7 @@
     }
   }
 
-  &__item > :not(.reminder) {
+  &__item {
     padding: rem(16) rem(16) rem(32);
     border-radius: var(--border-radius);
     background-color: var(--color-blue);

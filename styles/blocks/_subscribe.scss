@@ -37,6 +37,10 @@
     font-size: 14px;
     border: none;
 
+    @include tablet {
+      width: rem(150);
+    }
+
     &::placeholder {
       color: var(--color-dark-40);
     }

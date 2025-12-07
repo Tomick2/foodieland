@@ -20,11 +20,16 @@
 
     @include tablet {
       order: 1;
+      align-items: center;
     }
   }
 
   &__link {
     text-decoration: none;
+
+    @include tablet {
+      padding-inline: rem(70);
+    }
   }
 
   &__bg {
