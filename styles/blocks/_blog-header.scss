@@ -1,0 +1,30 @@
+@use '../helpers' as *;
+
+.blog-header {
+  display: flex;
+  flex-direction: column;
+  gap: rem(40);  
+  align-items: center;
+  margin-bottom: fluid(40, 80);
+
+  &__title,
+  &__description {
+    text-align: center;
+  }
+
+  &__image {
+    border-radius: var(--border-radius);
+
+    @include laptop-s {
+      border-radius: var(--border-radius-medium);
+    }
+
+    @include tablet {
+      border-radius: var(--border-radius-medium-s);
+    }
+
+    @include mobile {
+      border-radius: var(--border-radius-small);
+    }
+  }
+}
