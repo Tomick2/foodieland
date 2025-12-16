@@ -1,36 +1,46 @@
 @use '../helpers' as *;
 
 .card-recipe {
+  max-width: rem(400);
   position: relative;
+  display: flex;
+  row-gap: rem(24);
+
+  &.--flex-dir-clm {
+    flex-direction: column;
+  }
+
+  &.--flex-dir-row {
+    @include tablet-above {
+      flex-direction: row;
+    }
+  }
 
   @include tablet {
     max-width: 600px;
     margin-inline: auto;
   }
 
-  @include hover {
-    .card-recipe__link * {
-      color: var(--color-red);
-    }
-  }
-
-  &__link {
-    color: var(--color-dark);
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    row-gap: rem(24);
-  }
-
   &__image {
-    width: auto;
+    width: 100%;
     border-radius: var(--border-radius-medium-s);
   }
 
-  &__body {
+  &__body,
+  &__info-link {
     display: flex;
     flex-direction: column;
-    row-gap: rem(24);
+    row-gap: rem(20);
+    text-decoration: none;
+    color: var(--color-dark);
+  }
+
+  &__info-link {
+    @include hover {
+      & *:not(.author) {
+        color: var(--color-red);
+      }
+    }
   }
 
   &__button {

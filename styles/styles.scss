@@ -13,6 +13,7 @@
 @use "./blocks/categories";
 @use "./blocks/simple-recipes";
 @use "./blocks/card-recipe";
+@use "./blocks/reminder";
 @use "./blocks/kitchen-tutorial";
 @use "./blocks/instagram";
 @use "./blocks/delicious-recepie";
@@ -25,3 +26,6 @@
 @use "./blocks/directions";
 @use "./blocks/other-recipes";
 @use "./blocks/checkbox";
+@use "./blocks/search";
+@use "./blocks/all-recipes";
+@use "./blocks/pagination";

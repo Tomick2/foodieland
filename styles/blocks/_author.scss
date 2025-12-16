@@ -5,6 +5,13 @@
   align-items: center;
   column-gap: rem(16);
   text-decoration: none;
+  height: 50px;
+
+  @include hover {
+    & *:not(.author) {
+      color: var(--color-red);
+    }
+  }
 
   &__avatar {
     border-radius: 50%;
@@ -13,13 +20,28 @@
   &__info {
     height: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
+
+    &.--flex-dir-row {
+      flex-direction: row;
+      align-items: center;
+      column-gap: rem(24);
+    }
+
+    &.--flex-dir-clm {
+      flex-direction: column;
+    }
   }
 
   &__full-name {
     font-weight: 700;
     color: var(--color-dark);
+  }
+
+  &__border {
+    width: 1px;
+    height: 100%;
+    background-color: var(--color-dark-10);
   }
 
   &__postDate {

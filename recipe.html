@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="./icons/F.-icon.svg" />
-  <title>Foodieland | Recipes</title>
+  <title>Foodieland | Recipe</title>
   <link rel="stylesheet" href="./styles/styles.css" />
   <script src="./scripts/main.js" type="module" defer></script>
 </head>
@@ -66,7 +66,7 @@
     </div>
   </header>
 
-  <main class="main-recipe container">
+  <main class="special-main container">
     <section class="recipe">
       <div class="recipe__header">
         <h1 class="recipe__title">Health Japanese Fried Rice</h1>
@@ -77,7 +77,7 @@
             alt=""
             width="50" height="50" loading="lazy"
           />
-          <div class="author__info">
+          <div class="author__info --flex-dir-clm">
             <p class="author__full-name">John Smith</p>
             <time class="author__postDate" datetime="2022-03-15">15 March 2022</time>
           </div>
@@ -145,6 +145,7 @@
           <span 
             class="recipe__alert visually-hidden"
             data-js-alert-recipe
+            aria-label="Link Copied!"
           >Link Copied!</span>
         </div>
       </div>
@@ -357,51 +358,51 @@
         <h3 class="other-recipes__title">Other Recipe</h3>
         <ul class="other-recipes__list">
           <li class="other-recipes__item">
-            <article class="other-recipes__card-recipe card-recipe">
-              <a href="recipe.html" class="card-recipe__link">
-                <img
-                  class="card-recipe__image"
-                  src="./images/card-recipe/img-2.jpg"
-                  alt=""
-                  width="290" height="200" loading="lazy"
-                />
-                <div class="card-recipe__body">
-                  <span class="card-recipe__title">Chicken Meatball with Creamy Chees...</span>
-                  <span class="card-recipe__description">By Andreas Paula</span>
-                </div>
-              </a>
+            <article class="other-recipes__card">
+                <a href="recipe.html" class="other-recipes__link">
+                  <img
+                    class="other-recipes__image"
+                    src="./images/card-recipe/img-2.jpg"
+                    alt=""
+                    width="290" height="200" loading="lazy"
+                  />
+                  <div class="other-recipes__info">
+                    <span class="other-recipes__title">Chicken Meatball with Creamy Chees...</span>
+                    <span class="other-recipes__description">By Andreas Paula</span>
+                  </div>
+                </a>
             </article>
           </li>
           <li class="other-recipes__item">
-            <article class="other-recipes__card-recipe card-recipe">
-              <a href="recipe.html" class="card-recipe__link">
-                <img
-                  class="card-recipe__image"
-                  src="./images/card-recipe/img-2.jpg"
-                  alt=""
-                  width="290" height="200" loading="lazy"
-                />
-                <div class="card-recipe__body">
-                  <span class="card-recipe__title">Chicken Meatball with Creamy Chees...</span>
-                  <span class="card-recipe__description">By Andreas Paula</span>
-                </div>
-              </a>
+            <article class="other-recipes__card">
+                <a href="recipe.html" class="other-recipes__link">
+                  <img
+                    class="other-recipes__image"
+                    src="./images/card-recipe/img-2.jpg"
+                    alt=""
+                    width="290" height="200" loading="lazy"
+                  />
+                  <div class="other-recipes__info">
+                    <span class="other-recipes__title">Chicken Meatball with Creamy Chees...</span>
+                    <span class="other-recipes__description">By Andreas Paula</span>
+                  </div>
+                </a>
             </article>
           </li>
           <li class="other-recipes__item">
-            <article class="other-recipes__card-recipe card-recipe">
-              <a href="recipe.html" class="card-recipe__link">
-                <img
-                  class="card-recipe__image"
-                  src="./images/card-recipe/img-2.jpg"
-                  alt=""
-                  width="290" height="200" loading="lazy"
-                />
-                <div class="card-recipe__body">
-                  <span class="card-recipe__title">Chicken Meatball with Creamy Chees...</span>
-                  <span class="card-recipe__description">By Andreas Paula</span>
-                </div>
-              </a>
+            <article class="other-recipes__card">
+                <a href="recipe.html" class="other-recipes__link">
+                  <img
+                    class="other-recipes__image"
+                    src="./images/card-recipe/img-2.jpg"
+                    alt=""
+                    width="290" height="200" loading="lazy"
+                  />
+                  <div class="other-recipes__info">
+                    <span class="other-recipes__title">Chicken Meatball with Creamy Chees...</span>
+                    <span class="other-recipes__description">By Andreas Paula</span>
+                  </div>
+                </a>
             </article>
           </li>
         </ul>
@@ -444,16 +445,18 @@
       <div class="delicious-recipe__body">
         <ul class="delicious-recipe__list">
           <li class="delicious-recipe__item">
-            <article class="delicious-recipe__card-recipe card-recipe">
-              <a href="recipe.html" class="card-recipe__link">
+            <article class="simple-recipes__card-recipe card-recipe --flex-dir-clm">
+              <a href="./recipe.html" class="card-recipe__img-link">
                 <img
                   class="card-recipe__image"
-                  src="./images/card-recipe/img-2.jpg"
+                  src="./images/card-recipe/img-1.jpg"
                   alt=""
                   width="290" height="200" loading="lazy"
                 />
-                <div class="card-recipe__body">
-                  <span class="card-recipe__title">Big and Juicy Wagyu Beef Cheeseburger</span>
+              </a>
+              <div class="card-recipe__body">
+                <a href="./recipe.html" class="card-recipe__info-link">
+                  <h4 class="card-recipe__title">Big and Juicy Wagyu Beef Cheeseburger</h4>
                   <div class="card-recipe__recipe-met recipe-met">
                     <div class="recipe-met__item">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -474,8 +477,8 @@
                       </div>
                     </div>
                   </div>
-                </div>
-              </a>
+                </a>
+              </div>
               <button 
                 type="button" 
                 class="card-recipe__button like"
@@ -489,16 +492,18 @@
             </article>
           </li>
           <li class="delicious-recipe__item">
-            <article class="delicious-recipe__card-recipe card-recipe">
-              <a href="recipe.html" class="card-recipe__link">
+            <article class="simple-recipes__card-recipe card-recipe --flex-dir-clm">
+              <a href="./recipe.html" class="card-recipe__img-link">
                 <img
                   class="card-recipe__image"
-                  src="./images/card-recipe/img-2.jpg"
+                  src="./images/card-recipe/img-1.jpg"
                   alt=""
                   width="290" height="200" loading="lazy"
                 />
-                <div class="card-recipe__body">
-                  <span class="card-recipe__title">Big and Juicy Wagyu Beef Cheeseburger</span>
+              </a>
+              <div class="card-recipe__body">
+                <a href="./recipe.html" class="card-recipe__info-link">
+                  <h4 class="card-recipe__title">Big and Juicy Wagyu Beef Cheeseburger</h4>
                   <div class="card-recipe__recipe-met recipe-met">
                     <div class="recipe-met__item">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -519,8 +524,8 @@
                       </div>
                     </div>
                   </div>
-                </div>
-              </a>
+                </a>
+              </div>
               <button 
                 type="button" 
                 class="card-recipe__button like"
@@ -534,16 +539,18 @@
             </article>
           </li>
           <li class="delicious-recipe__item">
-            <article class="delicious-recipe__card-recipe card-recipe">
-              <a href="recipe.html" class="card-recipe__link">
+            <article class="simple-recipes__card-recipe card-recipe --flex-dir-clm">
+              <a href="./recipe.html" class="card-recipe__img-link">
                 <img
                   class="card-recipe__image"
-                  src="./images/card-recipe/img-2.jpg"
+                  src="./images/card-recipe/img-1.jpg"
                   alt=""
                   width="290" height="200" loading="lazy"
                 />
-                <div class="card-recipe__body">
-                  <span class="card-recipe__title">Big and Juicy Wagyu Beef Cheeseburger</span>
+              </a>
+              <div class="card-recipe__body">
+                <a href="./recipe.html" class="card-recipe__info-link">
+                  <h4 class="card-recipe__title">Big and Juicy Wagyu Beef Cheeseburger</h4>
                   <div class="card-recipe__recipe-met recipe-met">
                     <div class="recipe-met__item">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -564,8 +571,8 @@
                       </div>
                     </div>
                   </div>
-                </div>
-              </a>
+                </a>
+              </div>
               <button 
                 type="button" 
                 class="card-recipe__button like"
@@ -579,16 +586,18 @@
             </article>
           </li>
           <li class="delicious-recipe__item">
-            <article class="delicious-recipe__card-recipe card-recipe">
-              <a href="recipe.html" class="card-recipe__link">
+            <article class="simple-recipes__card-recipe card-recipe --flex-dir-clm">
+              <a href="./recipe.html" class="card-recipe__img-link">
                 <img
                   class="card-recipe__image"
-                  src="./images/card-recipe/img-2.jpg"
+                  src="./images/card-recipe/img-1.jpg"
                   alt=""
                   width="290" height="200" loading="lazy"
                 />
-                <div class="card-recipe__body">
-                  <span class="card-recipe__title">Big and Juicy Wagyu Beef Cheeseburger</span>
+              </a>
+              <div class="card-recipe__body">
+                <a href="./recipe.html" class="card-recipe__info-link">
+                  <h4 class="card-recipe__title">Big and Juicy Wagyu Beef Cheeseburger</h4>
                   <div class="card-recipe__recipe-met recipe-met">
                     <div class="recipe-met__item">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -609,8 +618,8 @@
                       </div>
                     </div>
                   </div>
-                </div>
-              </a>
+                </a>
+              </div>
               <button 
                 type="button" 
                 class="card-recipe__button like"

@@ -1,0 +1,32 @@
+@use '../helpers' as *;
+
+.all-recipes {
+  margin-bottom: fluid(40, 80);
+
+  @include laptop-above-s {
+    grid-column: 1 / 2;
+  }
+
+  &__card-recipe {
+    max-width: 100%;
+    display: grid;
+    gap: fluid(20, 40);
+    grid-template-columns: 2fr 3fr;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: rem(32);
+
+    @include tablet {
+      max-width: rem(600);
+      margin-inline: auto;
+    }
+  }
+}

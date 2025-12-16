@@ -10,7 +10,7 @@ new ButtonLike()
 const pageIdList = {
   home: "home",
   recipes: "recipes",
-  home: "home",
+  search: "search",
   home: "home",
   home: "home",
 }

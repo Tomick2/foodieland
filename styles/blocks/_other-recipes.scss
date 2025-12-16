@@ -2,9 +2,9 @@
 
 .other-recipes {
   position: relative;
-  margin-bottom: rem(13);
+  margin-bottom: fluid(40, 80);
 
-  @include tablet-above {
+  @include laptop-above-s {
     grid-column: 2 / 3;
     grid-row: 2 / 4;
   }
@@ -19,27 +19,37 @@
 
   &__list {
     display: flex;
+    margin-inline: auto;
     flex-direction: column;
     gap: fluid(12, 24);
   }
 
-  &__card-recipe.card-recipe {
-    .card-recipe {
-      &__link {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: fluid(12, 24);
-      }
+  &__link {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: fluid(12, 24);
+    text-decoration: none;
 
-      &__body {
-        justify-content: center;
-        gap: rem(16);
-      }
-
-      &__description {
-        color: var(--color-dark-60);
-        font-weight: 500;
+    @include hover {
+      & * {
+        color: var(--color-red);
       }
     }
+  }
+
+  &__image {
+    border-radius: var(--border-radius-small);
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: rem(16);
+  }
+
+  &__description {
+    color: var(--color-dark-60);
+    font-weight: 500;
   }
 }

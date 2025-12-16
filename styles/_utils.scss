@@ -30,3 +30,17 @@
     display: none !important;
   }
 }
+
+.special-main {
+  display: grid;
+  column-gap: fluid(20, 40);
+  grid-template-columns: 66% auto;
+
+  @include laptop-s {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  & > * {
+    grid-column: -1 / 1;
+  }
+}
