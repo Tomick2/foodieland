@@ -1,0 +1,80 @@
+@use '../helpers' as *;
+
+.custom-select {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  
+  &__button {
+    position: relative;
+    padding: rem(18) rem(20);
+    z-index: 100;
+    background-color: var(--color-light);
+    border-radius: var(--border-radius-small);
+    border: var(--border);
+
+    &::after {
+      position: absolute;
+      content: "❯";
+      right: rem(20);
+      rotate: 90deg;
+      color: var(--color-dark);
+    }
+
+    @include hover {
+      background-color: var(--color-red);
+      color: var(--color-light);
+
+      &::after {
+        color: currentColor;
+      }
+    }
+
+    &.is-active {
+      box-shadow: 0px 5px 5px -3px var(--color-dark-10);
+    }
+  }
+
+  &__list {
+    position: absolute;
+    top: calc(100% - rem(32));
+    width: 100%;
+    max-height: rem(210);
+    padding-top: rem(8);
+    overflow-y: auto;
+    background-color: var(--color-gray-alt);
+    border-radius: var(--border-radius-small);
+    border: var(--border);
+    
+    transition-duration: var(--transition-duration);
+    scale: 100% 0;
+    translate: 0 -50%;
+
+    &.is-active {
+      scale: 100%;
+      translate: 0 0;
+    }
+  }
+
+  &__option {
+    padding: rem(8) rem(12);
+
+    &.is-selected {
+      background-color: var(--color-dark-3);
+    }
+
+    &:first-child {
+      padding-top: rem(32);
+    }
+
+    &:last-child {
+      border-bottom-left-radius: var(--border-radius-small);;
+      border-bottom-right-radius: var(--border-radius-small);;
+    }
+
+    @include hover {
+      background-color: var(--color-light);
+    }
+  }
+}

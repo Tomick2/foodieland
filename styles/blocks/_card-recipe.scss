@@ -6,6 +6,12 @@
   display: flex;
   row-gap: rem(24);
 
+  @include hover {
+    & *:not(.author) {
+      color: var(--color-red);
+    }
+  }
+
   &.--flex-dir-clm {
     flex-direction: column;
   }
@@ -33,14 +39,6 @@
     row-gap: rem(20);
     text-decoration: none;
     color: var(--color-dark);
-  }
-
-  &__info-link {
-    @include hover {
-      & *:not(.author) {
-        color: var(--color-red);
-      }
-    }
   }
 
   &__button {

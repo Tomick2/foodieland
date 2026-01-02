@@ -1,0 +1,87 @@
+@use '../helpers' as *;
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: rem(24) rem(40);
+
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+
+  &__field,
+  &__select {
+    display: flex;
+    flex-direction: column;
+    gap: rem(12);
+  }
+
+  &__field {
+    &:has( *:required) .form__label::after {
+      position: absolute;
+      content: "*";
+      padding-left: rem(5);
+      color: var(--color-red);
+    }
+  }
+
+  &__label {
+    position: relative;
+    color: var(--color-dark-60);
+    text-transform: uppercase;
+    font-size: rem(12);
+    font-weight: 500;
+  }
+
+  &__input {
+    padding: rem(18) rem(20);
+    border-radius: var(--border-radius-small);
+    border: var(--border);
+  }
+
+
+  &__input,
+  &__textarea {
+    &::placeholder {
+      color: var(--color-dark-60);
+      font-size: rem(14);
+    }
+  }
+
+  &__textarea-wrapper {
+    padding: rem(18) rem(20) rem(18) rem(20);
+    border-radius: var(--border-radius-small);
+    border: var(--border);
+
+    &.is-focus {
+      outline: 2px solid var(--color-dark);
+    }
+  }
+
+  &__textarea {
+    width: 100%;
+    resize: none;
+    border: none;
+    outline: none;
+    padding: 0;
+  }
+
+  &__error {
+    font-size: rem(14);
+    font-weight: 400;
+    color: var(--color-red);
+  }
+
+  &__option {
+    color: var(--color-dark-60);
+  }
+
+  &__field:has( > .form__textarea-wrapper) {
+    grid-column: -1 / 1;
+  }
+
+  &__button {
+    grid-column: -1 / 1;
+    width: rem(180);
+  }
+}

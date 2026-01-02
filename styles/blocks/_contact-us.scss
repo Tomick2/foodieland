@@ -1,0 +1,26 @@
+@use '../helpers' as *;
+
+.contact-us {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-content: center;
+  margin-bottom: fluid(80, 160);
+  gap: rem(40);
+
+  @include laptop-s {
+    grid-template-columns: 1fr;
+  }
+
+  &__title {
+    grid-column: -1 / 1;
+    text-align: center;
+  }
+
+  &__bg {
+    border-radius: var(--border-radius);
+
+    @include laptop-s {
+      display: none;
+    }
+  }
+}
