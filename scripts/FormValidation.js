@@ -23,7 +23,7 @@ class FormValidation {
       formElement.ariaErrorMessageElements[0].innerHTML = ""
     }
 
-    formElement !== 0
+    return errors.valid
   }
 
   onSubmit(event) {
